@@ -51,8 +51,8 @@
             <div id="inputForms">
                 <form>
                     <div id="ageForm">
-                        <label for="age">Age (between 18 and 100):</label>
-                        <input type="number" id="age" name="age" min="18" max="100">
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" name="age" value="0">
                     </div>
                     <div id="sexForm">
                         <label for="sex">Sex:</label>
@@ -71,189 +71,189 @@
                     <div id="diabDurForm">
                         <label for="diabDur">Diabetes Duration:</label>
                         <select name="diabDur" id="diabDur">
-                          <option value="0-5">&#60;5 Years</option>
-                          <option value="5-10">5-&#60;10 Years</option>
-                          <option value="10-15">10-&#60;15 Years</option>
-                          <option value="15+">&#62;15 Years</option>
+                          <option value="0">&#60;5 Years</option>
+                          <option value="1">5-&#60;10 Years</option>
+                          <option value="2">10-&#60;15 Years</option>
+                          <option value="3">&#62;15 Years</option>
                         </select> 
                     </div>
                     <div id="smokingForm">
                         <label for="smoking">Smoking Status:</label>
                         <select name="smoking" id="smoking">
-                          <option value="nonSmoker">Non Smoker</option>
-                          <option value="pastSmoker">Former Smoker</option>
-                          <option value="currentSmoker">Current Smoker</option>
+                          <option value="0">Non Smoker</option>
+                          <option value="2">Former Smoker</option>
+                          <option value="3">Current Smoker</option>
                         </select> 
                     </div>
                     <div id="AMIAnginaForm">
                         <label for="AMIAngina">History of AMI or Angina Hospitalization:</label>
                         <select name="AMIAngina" id="AMIAngina">
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
                         </select> 
                     </div>
                     <div id="PCICABGForm">
                         <label for="PCICABG">History of PCI or CABG:</label>
                         <select name="PCICABG" id="PCICABG">
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
                         </select> 
                     </div>
                     <div id="strokeTIAForm">
                         <label for="strokeTIA">History of Stroke or TIA Hospitalization:</label>
                         <select name="strokeTIA" id="strokeTIA">
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
                         </select> 
                     </div>
                     <div id="CHFForm">
                         <label for="CHF">History of CHF:</label>
                         <select name="CHF" id="CHF">
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
                         </select> 
                     </div>
                     <div id="afForm">
                         <label for="af">History of Atrial Fibrillation:</label>
                         <select name="af" id="af">
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
                         </select> 
                     </div>
                     <div id="LEAForm">
                         <label for="LEA">History of Lower Extremity Amputation:</label>
                         <select name="LEA" id="LEA">
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
                         </select> 
                     </div>
                     <div id="retinopathyForm">
                         <label for="retinopathy">History of Retinopathy Treatment:</label>
                         <select name="retinopathy" id="retinopathy">
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
                         </select> 
                     </div>
                     <div id="ESRDForm">
                         <label for="ESRD">End Stage Renal Disease:</label>
                         <select name="ESRD" id="ESRD">
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
                         </select> 
                     </div>
                     <div id="cancerForm">
                         <label for="cancer">History of Cancer:</label>
                         <select name="cancer" id="cancer">
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
                         </select> 
                     </div>
                     <div id="mhForm">
                         <label for="mh">History of Mental Health Hospitalization:</label>
                         <select name="mh" id="mh">
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
                         </select> 
                     </div>
                     <div id="schizForm">
                         <label for="schiz">History of Schizophrenia Hospitalization:</label>
                         <select name="schiz" id="schiz">
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
                         </select> 
                     </div>
                     <div id="raForm">
                         <label for="ra">History of Rheumatoid Arthritis Hospitalization:</label>
                         <select name="ra" id="ra">
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
                         </select> 
                     </div>
                     <div id="metforminForm">
                         <label for="metformin">On Oral Glucose Lowering Agents:</label>
                         <select name="metformin" id="metformin">
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
                         </select> 
                     </div>
                     <div id="insulinForm">
                         <label for="insulin">On Insulin:</label>
                         <select name="insulin" id="insulin">
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
                         </select> 
                     </div>
                     <div id="statinsForm">
                         <label for="statins">On Statins:</label>
                         <select name="statins" id="statins">
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
                         </select> 
                     </div>
                     <div id="antihyperForm">
                         <label for="antihyper">On Antihyperintensives:</label>
                         <select name="antihyper" id="antihyper">
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
                         </select> 
                     </div>
                     <div id="anticoagForm">
                         <label for="anticoag">On Anticoagulants:</label>
                         <select name="anticoag" id="anticoag">
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
                         </select> 
                     </div>
                     <div id="SBPForm">
-                        <label for="SBP">Systolic Blood Pressure (between 50 and 250):</label>
-                        <input type="number" id="SBP" name="SBP" min="50" max="250">
+                        <label for="SBP">Systolic Blood Pressure:</label>
+                        <input type="number" id="SBP" name="SBP" value="0">
                     </div>
                     <div id="DBPForm">
-                        <label for="DBP">Diastolic Blood Pressure (between 30 and 140):</label>
-                        <input type="number" id="DBP" name="DBP" min="30" max="140">
+                        <label for="DBP">Diastolic Blood Pressure:</label>
+                        <input type="number" id="DBP" name="DBP" value="0">
                     </div>
                     <div id="BMIForm">
-                        <label for="BMI">Body-Mass Index (between 12 and 50):</label>
-                        <input type="number" id="BMI" name="BMI" min="12" max="50">
+                        <label for="BMI">Body-Mass Index:</label>
+                        <input type="number" id="BMI" name="BMI" value="0">
                     </div>
                     <div id="A1CForm">
                         <label for="A1C">HbA1c Value:</label>
-                        <input type="number" id="A1C" name="A1C">
+                        <input type="number" id="A1C" name="A1C" value="0">
                     </div>
                     <div id="ACRForm">
                         <label for="ACR">Albumin Creatinine Ratio:</label>
                         <select name="ACR" id="ACR">
-                          <option value="0-2">&#60;2.0</option>
-                          <option value="2-19.9">2.0-19.9</option>
-                          <option value="20-66.6">20-66.6</option>
-                          <option value="66.7+">&#62;&#61;66.7</option>
+                          <option value="0">&#60;2.0</option>
+                          <option value="2">2.0-19.9</option>
+                          <option value="3">20-66.6</option>
+                          <option value="4">&#62;&#61;66.7</option>
                         </select> 
                     </div>
                     <div id="creatinineForm">
                         <label for="creatinine">Creatinine:</label>
-                        <input type="number" id="creatinine" name="creatinine">
+                        <input type="number" id="creatinine" name="creatinine" value="0">
                     </div>
                     <div id="eGFRForm">
                         <label for="eGFR">eGFR:</label>
-                        <input type="number" id="eGFR" name="eGFR">
+                        <input type="number" id="eGFR" name="eGFR" value="0">
                     </div>
                     <div id="ldlForm">
                         <label for="ldl">LDL-Cholesterol:</label>
-                        <input type="number" id="ldl" name="ldl">
+                        <input type="number" id="ldl" name="ldl" value="0">
                     </form>
                     <form id="tchdlForm">
                         <label for="tchdl">Total Cholesterol to HDL Ratio:</label>
-                        <input type="number" id="tchdl" name="tchdl">
+                        <input type="number" id="tchdl" name="tchdl" value="0">
                     </div>
                     <div id="trigFrom">
                         <label for="trig">Triglycerides:</label>
-                        <input type="number" id="trig" name="trig">
+                        <input type="number" id="trig" name="trig" value="0">
                     </div>
                     <div id="ACEARBForm">
                         <label for="ACEARB">ACE-ARB:</label>
                         <select name="ACEARB" id="ACEARB">
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
                         </select> 
                     </div>
                 </form>
@@ -717,19 +717,27 @@
                 }
             }
 
-            function sumProduct(array){
-                sum = 0
-                for(x in array){
-                    console.log(array[x])
-                    sum = sum + parseFloat(array[x])
+            function doTheMath(userInputsArray, betas, CIF0){
+                let sumProduct = 0
+
+                console.log(userInputsArray)
+
+
+                for(let i = 0; i < betas.length; i++){
+                    console.log(sumProduct)
+                    sumProduct = sumProduct + parseFloat(userInputsArray[i])*parseFloat(betas[i])
                 }
-                return(sum)
+
+                let fiveYearRisk = 1 - ((1 - CIF0)**Math.E)**sumProduct
+
+                return(fiveYearRisk)
             }
 
             function calculateRisk() {
-                betas = 0
-                CIF0 = 0
-                outcome = document.getElementById("outcome").value
+                let betas = 0
+                let CIF0 = 0
+                let outcome = document.getElementById("outcome").value
+
                 if(outcome=="outcomeAMI"){
                     CIF0 = 0.0002015149
                     betas = [0.00000000000000000, 0.31670282697337300, -0.11248715231361800, 0.17039057464395200,
@@ -840,7 +848,113 @@
                         0.87481725838588800, 0.23479310652425800, 0.71763874877375600, 0.38752160159461100, 0.06550909518852550,
                         -0.06901567705293840]
                 }
-              document.getElementById("outputArea").innerHTML = sumProduct(betas);
+              
+              
+                //Getting inputs from form field
+                let age = parseInt(document.getElementById("age").value)
+                let isMale = parseInt(document.getElementById("sex").value)
+                let isRural = parseInt(document.getElementById("rural").value)
+                let diabDur = parseInt(document.getElementById("diabDur").value)
+                let smoking = parseInt(document.getElementById("smoking").value)
+                let isAMIAngina = parseInt(document.getElementById("AMIAngina").value)
+                let isPCICABG = parseInt(document.getElementById("PCICABG").value)
+                let isStrokeTIA = parseInt(document.getElementById("strokeTIA").value)
+                let isCHF = parseInt(document.getElementById("CHF").value)
+                let isAf = parseInt(document.getElementById("af").value)
+                let isLEA = parseInt(document.getElementById("LEA").value)
+                let isRetinopathy = parseInt(document.getElementById("retinopathy").value)
+                let isESRD = parseInt(document.getElementById("ESRD").value)
+                let isCancer = parseInt(document.getElementById("cancer").value)
+                let isMh = parseInt(document.getElementById("mh").value)
+                let isSchiz = parseInt(document.getElementById("schiz").value)
+                let isRa = parseInt(document.getElementById("ra").value)
+                let isMetformin = parseInt(document.getElementById("metformin").value)
+                let isInsulin = parseInt(document.getElementById("insulin").value)
+                let isStatins = parseInt(document.getElementById("statins").value)
+                let isAntihyper = parseInt(document.getElementById("antihyper").value)
+                let isAnticoag = parseInt(document.getElementById("anticoag").value)
+                let SBP = parseInt(document.getElementById("SBP").value)
+                let DBP = parseInt(document.getElementById("DBP").value)
+                let BMI = parseFloat(document.getElementById("BMI").value)
+                let A1C = parseFloat(document.getElementById("A1C").value)
+                let ACR = parseInt(document.getElementById("ACR").value)
+                let creatinine = parseFloat(document.getElementById("creatinine").value)
+                let eGFR = parseFloat(document.getElementById("eGFR").value)
+                let ldl = parseFloat(document.getElementById("ldl").value)
+                let tchdl = parseFloat(document.getElementById("tchdl").value)
+                let trig = parseFloat(document.getElementById("trig").value)
+                let isACEARB = parseInt(document.getElementById("ACEARB").value)
+            
+                //Creating one hot encoded parameters (diabDur, smoking, acr)
+                let oneHotDiabDur = 0
+                if(diabDur==0) oneHotDiabDur = [0,0,0]
+                else if(diabDur==1) oneHotDiabDur = [1,0,0]
+                else if(diabDur==2) oneHotDiabDur = [0,1,0]
+                else if(diabDur==3) oneHotDiabDur = [0,0,1]
+
+                let oneHotSmoking = 0
+                if(smoking==0) oneHotSmoking = [0,0]
+                else if(smoking==2) oneHotSmoking = [1,0]
+                else if(smoking==3) oneHotSmoking = [0,1]
+
+                let oneHotACR = 0
+                if(ACR==0) oneHotACR = [0,0,0]
+                else if(ACR==2) oneHotACR = [1,0,0]
+                else if(ACR==3) oneHotACR = [0,1,0]
+                else if(ACR==4) oneHotACR = [0,0,1]
+
+                let ageMaleInt = 0
+                if(isMale) ageMaleInt = age
+
+                //Creating list of user parameter inputs
+                userInputsArray = 
+                {
+                    ACE_ARB:isACEARB,
+                    Insulin:isInsulin,
+                    Statin:isStatins,
+                    acr_gp2:oneHotACR[0],
+                    acr_gp3:oneHotACR[1],
+                    acr_gp4:oneHotACR[2],
+                    af:isAf,
+                    age:age,
+                    ageMale:ageMaleInt,
+                    aic_val:A1C,
+                    ami_uangina:isAMIAngina,
+                    ampute:isLEA,
+                    anticoag:isAnticoag,
+                    antihyper:isAntihyper,
+                    bmi_val:BMI,
+                    cancer:isCancer,
+                    chf:isCHF,
+                    crs_val:creatinine,
+                    dbp_val:DBP,
+                    dur05_10:oneHotDiabDur[0],
+                    dur10_15:oneHotDiabDur[1],
+                    dur15_25:oneHotDiabDur[2],
+                    egfr_val:eGFR,
+                    esrd:isESRD,
+                    ethnicG:0,
+                    ethnicS:0,
+                    ldl_val:ldl,
+                    male:isMale,
+                    metformin:isMetformin,
+                    mh:isMh,
+                    pci_cabg:isPCICABG,
+                    ra:isRa,
+                    retinopathy:isRetinopathy,
+                    rural_Y:isRural,
+                    sbp_val:SBP,
+                    schiz:isSchiz,
+                    smk_val2:oneHotSmoking[0],
+                    smk_val3:oneHotSmoking[1],
+                    stroke_tia:isStrokeTIA,
+                    tchdl_val:tchdl,
+                    trig_val:trig
+                }
+            
+                fiveYearRisk = doTheMath(userInputsArray, betas, CIF0)
+
+                document.getElementById("outputArea").innerHTML = fiveYearRisk+"%"
             }
           </script>
 </body>
