@@ -240,8 +240,8 @@
                     <div id="ldlForm">
                         <label for="ldl">LDL-Cholesterol:</label>
                         <input type="number" id="ldl" name="ldl" value="0">
-                    </form>
-                    <form id="tchdlForm">
+                    </div>
+                    <div id="tchdlForm">
                         <label for="tchdl">Total Cholesterol to HDL Ratio:</label>
                         <input type="number" id="tchdl" name="tchdl" value="0">
                     </div>
@@ -722,13 +722,14 @@
 
                 console.log(userInputsArray)
 
-
                 for(let i = 0; i < betas.length; i++){
-                    console.log(sumProduct)
+                    //console.log(sumProduct)
                     sumProduct = sumProduct + parseFloat(userInputsArray[i])*parseFloat(betas[i])
                 }
 
-                let fiveYearRisk = 1 - ((1 - CIF0)**Math.E)**sumProduct
+                console.log("SumProduct: "+sumProduct)
+
+                let fiveYearRisk = 1 - (1 - CIF0)**Math.exp(sumProduct)
 
                 return(fiveYearRisk)
             }
@@ -952,7 +953,7 @@
                     trig
                 ]
             
-                fiveYearRisk = doTheMath(userInputsArray, betas, CIF0)
+                fiveYearRisk = doTheMath(userInputsArray, betas, CIF0).toFixed(3)
 
                 document.getElementById("outputArea").innerHTML = fiveYearRisk+"%"
             }
