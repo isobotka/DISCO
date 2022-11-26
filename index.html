@@ -1,3 +1,8 @@
+<!--
+    Diabetes Complications Risk Scores | DISCO
+    Code Written By: Ian Sobotka Email: isobotka.hba2021@ivey.ca
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -265,7 +270,7 @@
     </main>
     <footer>
         <br>
-        {# put maybe year and copyright here? #}
+        {# Calculator coded by Ian Sobotka...Can put authors names here? #}
     </footer>
 
     <script>
@@ -318,31 +323,31 @@
                         smokingForm:false,
                         AMIAnginaForm:false,
                         PCICABGForm:false,
-                        strokeTIAForm:false,
+                        strokeTIAForm:true,
                         CHFForm:true,
                         afForm:true,
-                        LEAForm:true,
+                        LEAForm:false,
                         retinopathyForm:false,
                         ESRDForm:false,
                         cancerForm:false,
-                        mhForm:false,
-                        schizForm:true,
+                        mhForm:true,
+                        schizForm:false,
                         raForm:false,
-                        metforminForm:false,
-                        insulinForm:true,
+                        metforminForm:true,
+                        insulinForm:false,
                         statinsForm:false,
-                        antihyperForm:false,
-                        anticoagForm:true,
-                        SBPForm:false,
-                        DBPForm:true,
-                        BMIForm:false,
+                        antihyperForm:true,
+                        anticoagForm:false,
+                        SBPForm:true,
+                        DBPForm:false,
+                        BMIForm:true,
                         A1CForm:true,
                         ACRForm:true,
-                        creatinineForm:true,
+                        creatinineForm:false,
                         eGFRForm:false,
                         ldlForm:false,
-                        tchdlForm:false,
-                        trigFrom:true,
+                        tchdlForm:true,
+                        trigFrom:false,
                         ACEARBForm:false
                     }
                 },
@@ -695,6 +700,8 @@
 
                 document.getElementById("calculateRiskArea").hidden = true
 
+                document.getElementById("outputArea").innerHTML = ""
+
                 for (let i = 0; i < forms.length; i++) {
                     forms[i].hidden = true
                 }
@@ -892,7 +899,6 @@
                         0.00000000000000000]
                 }
               
-              
                 //Getting inputs from form field
                 let age = parseInt(document.getElementById("age").value)
                 let isMale = parseInt(document.getElementById("sex").value)
@@ -995,9 +1001,9 @@
                     trig
                 ]
             
-                fiveYearRisk = doTheMath(userInputsArray, betas, CIF0).toFixed(3)
+                fiveYearRisk = (100 * doTheMath(userInputsArray, betas, CIF0)).toFixed(3)
 
-                document.getElementById("outputArea").innerHTML = fiveYearRisk+"%"
+                document.getElementById("outputArea").innerHTML = "Five Year Risk: "+fiveYearRisk+"%"
             }
           </script>
 </body>
