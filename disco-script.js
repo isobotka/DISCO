@@ -732,7 +732,7 @@ function calculateRisk() {
         trig
     ]
 
-    fiveYearRisk = (100 * doTheMath(userInputsArray, betas, CIF0)).toFixed(3)
+    fiveYearRisk = (100 * doTheMath(userInputsArray, betas, CIF0)).toFixed(2)
 
     document.getElementById("outputArea").innerHTML = "Five Year Risk: "+fiveYearRisk+"%"
 }
