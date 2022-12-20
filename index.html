@@ -16,8 +16,8 @@
     <header>
     </header>
     <main>
-        <h1>
-            Diabetes Complications Risk Scores | DISCO
+        <h1 style="display: flex; align-items: center;">
+            DIabeteS COmplications Risk Scores | DISC<img src="disco-ball.png" alt="O" style="width: 28px; height: 28px; margin-left: 2px; margin-bottom: 0px;">
         </h1>
         <div>
             <h2>
@@ -219,11 +219,11 @@
                     </div>
                     <div id="BMIForm">
                         <label for="BMI">Body-Mass Index (kg/m&#0178):</label>
-                        <input type="number" id="BMI" name="BMI" value="0">
+                        <input type="number" id="BMI" name="BMI" value="0" step="0.1">
                     </div>
                     <div id="A1CForm">
                         <label for="A1C">HbA1c Value (%):</label>
-                        <input type="number" id="A1C" name="A1C" value="0">
+                        <input type="number" id="A1C" name="A1C" value="0" step="0.1">
                     </div>
                     <div id="ACRForm">
                         <label for="ACR">Albumin Creatinine Ratio (mg/mmol):</label>
@@ -244,15 +244,15 @@
                     </div>
                     <div id="ldlForm">
                         <label for="ldl">LDL-Cholesterol (mmol/L):</label>
-                        <input type="number" id="ldl" name="ldl" value="0">
+                        <input type="number" id="ldl" name="ldl" value="0" step="0.1">
                     </div>
                     <div id="tchdlForm">
                         <label for="tchdl">Total Cholesterol to HDL Ratio:</label>
-                        <input type="number" id="tchdl" name="tchdl" value="0">
+                        <input type="number" id="tchdl" name="tchdl" value="0" step="0.1">
                     </div>
                     <div id="trigFrom">
                         <label for="trig">Triglycerides (mmol/L):</label>
-                        <input type="number" id="trig" name="trig" value="0">
+                        <input type="number" id="trig" name="trig" value="0" step="0.1">
                     </div>
                 </form>
             </div>
@@ -264,7 +264,7 @@
     <footer>
         <script type="text/javascript" src="disco-script.js"> </script>
         <br>
-        {# Calculator coded by Ian Sobotka...Can put authors names here? #}
+        {# Calculator coded by Ian Sobotka #}
         <br>
         {# Code will be available <a href="https://github.com/isobotka/DISCO">here</a> once article is published. #}
     </footer>
