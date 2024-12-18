@@ -715,7 +715,7 @@ function calculateRisk() {
         eGFR,
         isESRD,
         0, //Ethnicity vars
-        0, //^^
+        0, //Ethnicity Vars 2
         ldl,
         isMale,
         isMetformin,
