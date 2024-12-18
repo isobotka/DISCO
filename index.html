@@ -1,6 +1,7 @@
 <!--
     Diabetes Complications Risk Scores | DISCO
-    Code Written By: Ian Sobotka Email: isobotka.hba2021@ivey.ca
+    Code Written By: Ian Sobotka
+    For Questions or Comments Email: isobotka.hba2021@ivey.ca
 -->
 
 <!DOCTYPE html>
@@ -11,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DISCO</title>
     <link rel="icon" href="disco-ball.png">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BFH61CXBVV"></script>
@@ -23,261 +25,275 @@
 </script>
 <body>
     <header>
+        <div class="wrapper">
+            <div class="header-layout">
+                <!--<h1 style="display: flex; align-items: center;">
+                    DIabeteS COmplications Risk Scores | DISC<img src="disco-ball.png" alt="O" style="width: 28px; height: 28px; margin-left: 2px; margin-bottom: 0px;">
+                </h1>
+                -->
+                <img src="discoLogo.png" alt="Diabetes Complications Risk Scores Logo" class="header-logo">
+                <h1 class="sr-only">DIabeteS COmplications Risk Scores | DISCO</h1>
+            </div>
+        </div>
     </header>
     <main>
-        <!--<h1 style="display: flex; align-items: center;">
-            DIabeteS COmplications Risk Scores | DISC<img src="disco-ball.png" alt="O" style="width: 28px; height: 28px; margin-left: 2px; margin-bottom: 0px;">
-        </h1>
-        -->
-        <img src="discoLogo.png" alt="Diabetes Complications Risk Scores Logo" style="width: 30%; margin-left: 2px; margin-bottom: 0px;">
-        <div>
-            <h2>
-                Choose an Outcome
-            </h2>
-            <form>
-                <label for="outcome">Outcome:</label>
-                <select name="outcome" id="outcome" onChange="showHideForms()">
-                    <option value="none" selected disabled hidden>Select an Option</option>
-                    <option value="outcomeAMI">AMI</option>
-                    <option value="Stroke">Stroke</option>
-                    <option value="outcomeCHF">Heart Failure</option>
-                    <option value="outcomeLEA">Lower Extremity Amputation</option>
-                    <option value="Foot Ulcer">Foot Ulcer</option>
-                    <option value="outcomeRetinopathy">Retinopathy Treatment</option>
-                    <option value="outcomeESRD">End Stage Renal Disease</option>
-                    <option value="allCause">All Cause Mortality</option>
-                    <option value="cv">Cardiovascular Mortality</option>
-                    <option value="ncv">Non-Cardiovascular Mortality</option>
-                </select> 
-            </form>
-        </div>
-
-        <div id="calculateRiskArea" hidden = "">
-            <h2>
-                Input Patient Characteristics
-            </h2>
-
-            <div id="inputForms">
+        <div class="wrapper">
+            <div class="choose-outcome">
+                <h2>
+                    Choose an Outcome
+                </h2>
                 <form>
-                    <div id="ageForm">
-                        <label for="age">Age (18+):</label>
-                        <input type="number" id="age" name="age" value="18" min="18">
-                    </div>
-                    <div id="sexForm">
-                        <label for="sex">Sex:</label>
-                        <select name="sex" id="sex">
-                          <option value="1">Male</option>
-                          <option value="0">Female</option>
+                    <div class="form-input-wrap">
+                        <label for="outcome" class="sr-only">Outcome:</label>
+                        <select name="outcome" id="outcome" onChange="showHideForms()">
+                            <option value="none" selected disabled hidden>Select an Option</option>
+                            <option value="outcomeAMI">AMI</option>
+                            <option value="Stroke">Stroke</option>
+                            <option value="outcomeCHF">Heart Failure</option>
+                            <option value="outcomeLEA">Lower Extremity Amputation</option>
+                            <option value="Foot Ulcer">Foot Ulcer</option>
+                            <option value="outcomeRetinopathy">Retinopathy Treatment</option>
+                            <option value="outcomeESRD">End Stage Renal Disease</option>
+                            <option value="allCause">All Cause Mortality</option>
+                            <option value="cv">Cardiovascular Mortality</option>
+                            <option value="ncv">Non-Cardiovascular Mortality</option>
                         </select> 
-                    </div>
-                    <div id="ruralForm">
-                        <label for="rural">Rural Residence:</label>
-                        <select name="rural" id="rural">
-                            <option value="0">No</option>
-                            <option value="1">Yes</option>
-                        </select> 
-                    </div>
-                    <div id="diabDurForm">
-                        <label for="diabDur">Diabetes Duration:</label>
-                        <select name="diabDur" id="diabDur">
-                          <option value="0">&#60;5 Years</option>
-                          <option value="1">5-&#60;10 Years</option>
-                          <option value="2">10-&#60;15 Years</option>
-                          <option value="3">&#62;15 Years</option>
-                        </select> 
-                    </div>
-                    <div id="smokingForm">
-                        <label for="smoking">Smoking Status:</label>
-                        <select name="smoking" id="smoking">
-                          <option value="0">Non Smoker</option>
-                          <option value="2">Former Smoker</option>
-                          <option value="3">Current Smoker</option>
-                        </select> 
-                    </div>
-                    <div id="AMIAnginaForm">
-                        <label for="AMIAngina">History of AMI or Angina Hospitalization:</label>
-                        <select name="AMIAngina" id="AMIAngina">
-                            <option value="0">No</option>
-                            <option value="1">Yes</option>
-                        </select> 
-                    </div>
-                    <div id="PCICABGForm">
-                        <label for="PCICABG">History of PCI or CABG:</label>
-                        <select name="PCICABG" id="PCICABG">
-                            <option value="0">No</option>
-                            <option value="1">Yes</option>
-                        </select> 
-                    </div>
-                    <div id="strokeTIAForm">
-                        <label for="strokeTIA">History of Stroke or TIA Hospitalization:</label>
-                        <select name="strokeTIA" id="strokeTIA">
-                            <option value="0">No</option>
-                            <option value="1">Yes</option>
-                        </select> 
-                    </div>
-                    <div id="CHFForm">
-                        <label for="CHF">History of Heart Failure:</label>
-                        <select name="CHF" id="CHF">
-                            <option value="0">No</option>
-                            <option value="1">Yes</option>
-                        </select> 
-                    </div>
-                    <div id="afForm">
-                        <label for="af">History of Atrial Fibrillation:</label>
-                        <select name="af" id="af">
-                            <option value="0">No</option>
-                            <option value="1">Yes</option>
-                        </select> 
-                    </div>
-                    <div id="LEAForm">
-                        <label for="LEA">History of Lower Extremity Amputation:</label>
-                        <select name="LEA" id="LEA">
-                            <option value="0">No</option>
-                            <option value="1">Yes</option>
-                        </select> 
-                    </div>
-                    <div id="retinopathyForm">
-                        <label for="retinopathy">History of Retinopathy Treatment:</label>
-                        <select name="retinopathy" id="retinopathy">
-                            <option value="0">No</option>
-                            <option value="1">Yes</option>
-                        </select> 
-                    </div>
-                    <div id="ESRDForm">
-                        <label for="ESRD">End Stage Renal Disease:</label>
-                        <select name="ESRD" id="ESRD">
-                            <option value="0">No</option>
-                            <option value="1">Yes</option>
-                        </select> 
-                    </div>
-                    <div id="cancerForm">
-                        <label for="cancer">History of Cancer:</label>
-                        <select name="cancer" id="cancer">
-                            <option value="0">No</option>
-                            <option value="1">Yes</option>
-                        </select> 
-                    </div>
-                    <div id="mhForm">
-                        <label for="mh">History of Mental Health Hospitalization:</label>
-                        <select name="mh" id="mh">
-                            <option value="0">No</option>
-                            <option value="1">Yes</option>
-                        </select> 
-                    </div>
-                    <div id="schizForm">
-                        <label for="schiz">History of Schizophrenia Hospitalization:</label>
-                        <select name="schiz" id="schiz">
-                            <option value="0">No</option>
-                            <option value="1">Yes</option>
-                        </select> 
-                    </div>
-                    <div id="raForm">
-                        <label for="ra">History of Rheumatoid Arthritis Hospitalization:</label>
-                        <select name="ra" id="ra">
-                            <option value="0">No</option>
-                            <option value="1">Yes</option>
-                        </select> 
-                    </div>
-                    <div id="metforminForm">
-                        <label for="metformin">On Oral Glucose Lowering Agents:</label>
-                        <select name="metformin" id="metformin">
-                            <option value="0">No</option>
-                            <option value="1">Yes</option>
-                        </select> 
-                    </div>
-                    <div id="insulinForm">
-                        <label for="insulin">On Insulin:</label>
-                        <select name="insulin" id="insulin">
-                            <option value="0">No</option>
-                            <option value="1">Yes</option>
-                        </select> 
-                    </div>
-                    <div id="statinsForm">
-                        <label for="statins">On Statins:</label>
-                        <select name="statins" id="statins">
-                            <option value="0">No</option>
-                            <option value="1">Yes</option>
-                        </select> 
-                    </div>
-                    <div id="antihyperForm">
-                        <label for="antihyper">On Antihyperintensives:</label>
-                        <select name="antihyper" id="antihyper">
-                            <option value="0">No</option>
-                            <option value="1">Yes</option>
-                        </select> 
-                    </div>
-                    <div id="ACEARBForm">
-                        <label for="ACEARB">On ACE Inhibitor or ARB:</label>
-                        <select name="ACEARB" id="ACEARB">
-                            <option value="0">No</option>
-                            <option value="1">Yes</option>
-                        </select> 
-                    </div>
-                    <div id="anticoagForm">
-                        <label for="anticoag">On Anticoagulants:</label>
-                        <select name="anticoag" id="anticoag">
-                            <option value="0">No</option>
-                            <option value="1">Yes</option>
-                        </select> 
-                    </div>
-                    <div id="SBPForm">
-                        <label for="SBP">Systolic Blood Pressure (mmHg):</label>
-                        <input type="number" id="SBP" name="SBP" value="0">
-                    </div>
-                    <div id="DBPForm">
-                        <label for="DBP">Diastolic Blood Pressure (mmHg):</label>
-                        <input type="number" id="DBP" name="DBP" value="0">
-                    </div>
-                    <div id="BMIForm">
-                        <label for="BMI">Body-Mass Index (kg/m&#0178):</label>
-                        <input type="number" id="BMI" name="BMI" value="0" step="0.1">
-                    </div>
-                    <div id="A1CForm">
-                        <label for="A1C">HbA1c Value (%):</label>
-                        <input type="number" id="A1C" name="A1C" value="0" step="0.1">
-                    </div>
-                    <div id="ACRForm">
-                        <label for="ACR">Albumin Creatinine Ratio (mg/mmol):</label>
-                        <select name="ACR" id="ACR">
-                          <option value="0">&#60;2.0</option>
-                          <option value="2">2.0-19.9</option>
-                          <option value="3">20-66.6</option>
-                          <option value="4">&#62;&#61;66.7</option>
-                        </select> 
-                    </div>
-                    <div id="creatinineForm">
-                        <label for="creatinine">Creatinine (umol/L):</label>
-                        <input type="number" id="creatinine" name="creatinine" value="0">
-                    </div>
-                    <div id="eGFRForm">
-                        <label for="eGFR">eGFR:</label>
-                        <input type="number" id="eGFR" name="eGFR" value="0">
-                    </div>
-                    <div id="ldlForm">
-                        <label for="ldl">LDL-Cholesterol (mmol/L):</label>
-                        <input type="number" id="ldl" name="ldl" value="0" step="0.1">
-                    </div>
-                    <div id="tchdlForm">
-                        <label for="tchdl">Total Cholesterol to HDL Ratio:</label>
-                        <input type="number" id="tchdl" name="tchdl" value="0" step="0.1">
-                    </div>
-                    <div id="trigFrom">
-                        <label for="trig">Triglycerides (mmol/L):</label>
-                        <input type="number" id="trig" name="trig" value="0" step="0.1">
                     </div>
                 </form>
             </div>
 
-            <button onclick="calculateRisk()">Calculate Five Year Risk</button>
-            <p id="outputArea"></p>
+            <div id="calculateRiskArea" hidden = "">
+                <h2>
+                    Input Patient Characteristics
+                </h2>
+    
+                <div id="inputForms">
+                    <form>
+                        <div id="ageForm">
+                            <label for="age">Age (18+):</label>
+                            <input type="number" id="age" name="age" value="18" min="18">
+                        </div>
+                        <div id="sexForm">
+                            <label for="sex">Sex:</label>
+                            <select name="sex" id="sex">
+                              <option value="1">Male</option>
+                              <option value="0">Female</option>
+                            </select> 
+                        </div>
+                        <div id="ruralForm">
+                            <label for="rural">Rural Residence:</label>
+                            <select name="rural" id="rural">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select> 
+                        </div>
+                        <div id="diabDurForm">
+                            <label for="diabDur">Diabetes Duration:</label>
+                            <select name="diabDur" id="diabDur">
+                              <option value="0">&#60;5 Years</option>
+                              <option value="1">5-&#60;10 Years</option>
+                              <option value="2">10-&#60;15 Years</option>
+                              <option value="3">&#62;15 Years</option>
+                            </select> 
+                        </div>
+                        <div id="smokingForm">
+                            <label for="smoking">Smoking Status:</label>
+                            <select name="smoking" id="smoking">
+                              <option value="0">Non Smoker</option>
+                              <option value="2">Former Smoker</option>
+                              <option value="3">Current Smoker</option>
+                            </select> 
+                        </div>
+                        <div id="AMIAnginaForm">
+                            <label for="AMIAngina">History of AMI or Angina Hospitalization:</label>
+                            <select name="AMIAngina" id="AMIAngina">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select> 
+                        </div>
+                        <div id="PCICABGForm">
+                            <label for="PCICABG">History of PCI or CABG:</label>
+                            <select name="PCICABG" id="PCICABG">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select> 
+                        </div>
+                        <div id="strokeTIAForm">
+                            <label for="strokeTIA">History of Stroke or TIA Hospitalization:</label>
+                            <select name="strokeTIA" id="strokeTIA">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select> 
+                        </div>
+                        <div id="CHFForm">
+                            <label for="CHF">History of Heart Failure:</label>
+                            <select name="CHF" id="CHF">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select> 
+                        </div>
+                        <div id="afForm">
+                            <label for="af">History of Atrial Fibrillation:</label>
+                            <select name="af" id="af">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select> 
+                        </div>
+                        <div id="LEAForm">
+                            <label for="LEA">History of Lower Extremity Amputation:</label>
+                            <select name="LEA" id="LEA">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select> 
+                        </div>
+                        <div id="retinopathyForm">
+                            <label for="retinopathy">History of Retinopathy Treatment:</label>
+                            <select name="retinopathy" id="retinopathy">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select> 
+                        </div>
+                        <div id="ESRDForm">
+                            <label for="ESRD">End Stage Renal Disease:</label>
+                            <select name="ESRD" id="ESRD">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select> 
+                        </div>
+                        <div id="cancerForm">
+                            <label for="cancer">History of Cancer:</label>
+                            <select name="cancer" id="cancer">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select> 
+                        </div>
+                        <div id="mhForm">
+                            <label for="mh">History of Mental Health Hospitalization:</label>
+                            <select name="mh" id="mh">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select> 
+                        </div>
+                        <div id="schizForm">
+                            <label for="schiz">History of Schizophrenia Hospitalization:</label>
+                            <select name="schiz" id="schiz">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select> 
+                        </div>
+                        <div id="raForm">
+                            <label for="ra">History of Rheumatoid Arthritis Hospitalization:</label>
+                            <select name="ra" id="ra">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select> 
+                        </div>
+                        <div id="metforminForm">
+                            <label for="metformin">On Oral Glucose Lowering Agents:</label>
+                            <select name="metformin" id="metformin">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select> 
+                        </div>
+                        <div id="insulinForm">
+                            <label for="insulin">On Insulin:</label>
+                            <select name="insulin" id="insulin">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select> 
+                        </div>
+                        <div id="statinsForm">
+                            <label for="statins">On Statins:</label>
+                            <select name="statins" id="statins">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select> 
+                        </div>
+                        <div id="antihyperForm">
+                            <label for="antihyper">On Antihyperintensives:</label>
+                            <select name="antihyper" id="antihyper">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select> 
+                        </div>
+                        <div id="ACEARBForm">
+                            <label for="ACEARB">On ACE Inhibitor or ARB:</label>
+                            <select name="ACEARB" id="ACEARB">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select> 
+                        </div>
+                        <div id="anticoagForm">
+                            <label for="anticoag">On Anticoagulants:</label>
+                            <select name="anticoag" id="anticoag">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select> 
+                        </div>
+                        <div id="SBPForm">
+                            <label for="SBP">Systolic Blood Pressure (mmHg):</label>
+                            <input type="number" id="SBP" name="SBP" value="0">
+                        </div>
+                        <div id="DBPForm">
+                            <label for="DBP">Diastolic Blood Pressure (mmHg):</label>
+                            <input type="number" id="DBP" name="DBP" value="0">
+                        </div>
+                        <div id="BMIForm">
+                            <label for="BMI">Body-Mass Index (kg/m&#0178):</label>
+                            <input type="number" id="BMI" name="BMI" value="0" step="0.1">
+                        </div>
+                        <div id="A1CForm">
+                            <label for="A1C">HbA1c Value (%):</label>
+                            <input type="number" id="A1C" name="A1C" value="0" step="0.1">
+                        </div>
+                        <div id="ACRForm">
+                            <label for="ACR">Albumin Creatinine Ratio (mg/mmol):</label>
+                            <select name="ACR" id="ACR">
+                              <option value="0">&#60;2.0</option>
+                              <option value="2">2.0-19.9</option>
+                              <option value="3">20-66.6</option>
+                              <option value="4">&#62;&#61;66.7</option>
+                            </select> 
+                        </div>
+                        <div id="creatinineForm">
+                            <label for="creatinine">Creatinine (umol/L):</label>
+                            <input type="number" id="creatinine" name="creatinine" value="0">
+                        </div>
+                        <div id="eGFRForm">
+                            <label for="eGFR">eGFR:</label>
+                            <input type="number" id="eGFR" name="eGFR" value="0">
+                        </div>
+                        <div id="ldlForm">
+                            <label for="ldl">LDL-Cholesterol (mmol/L):</label>
+                            <input type="number" id="ldl" name="ldl" value="0" step="0.1">
+                        </div>
+                        <div id="tchdlForm">
+                            <label for="tchdl">Total Cholesterol to HDL Ratio:</label>
+                            <input type="number" id="tchdl" name="tchdl" value="0" step="0.1">
+                        </div>
+                        <div id="trigFrom">
+                            <label for="trig">Triglycerides (mmol/L):</label>
+                            <input type="number" id="trig" name="trig" value="0" step="0.1">
+                        </div>
+                    </form>
+                </div>
+    
+                <button onclick="calculateRisk()">Calculate Five Year Risk</button>
+                <p id="outputArea"></p>
+            </div>
         </div>
+
     </main>
     <footer>
-        <script type="text/javascript" src="disco-script.js"> </script>
-        <br>
-        {# Calculator coded by Ian Sobotka #}
-        <br>
-        {# Code will be available <a href="https://github.com/isobotka/DISCO">here</a> once article is published. #}
+        <div class="wrapper">
+            <script type="text/javascript" src="disco-script.js"> </script>
+            <br>
+            Full journal article can be found <a href=" https://www.canadianjournalofdiabetes.com/article/S1499-2671(23)00728-1/fulltext">here</a>.
+            <br>
+            Code available on the <a href="https://github.com/isobotka/DISCO">GitHub repository</a>
+            <br>
+            Calculator coded by <a href="https://www.isobotka.ca">Ian Sobotka</a>
+        </div>
     </footer>
 </body>
 </html>
