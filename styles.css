@@ -219,7 +219,7 @@ header{
 #calculateRiskArea form{
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.7rem;
 }
 
 #calculateRiskArea form div:not([hidden]){
